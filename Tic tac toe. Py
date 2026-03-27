@@ -1,0 +1,101 @@
+HTML
+<! DOCTYPE html>
+<html>
+<head>
+ <title>Tic Tac Toe</title>
+ <style>
+  Body{
+  Text-align:center;
+  Font-family:arial;
+}
+. Board{
+Display:grid;
+Grid-template-columns:
+Repeat (3,100px);
+Gap:5px;
+Justify-content:center;
+Margin-top:20px;
+}
+.cell{
+Width:100px;
+Height:100px;
+Font-size:2em;
+Background :#ddd;
+Display:flex;
+Align-items:center;
+Justify-content:center;
+Cursor:pointer;
+}
+Button{
+Margin-top:15px;
+Padding:10px;
+}
+</style>
+</head>
+<body>
+
+<h1>Tic Tac Toe/h1>
+<div class="board" id="board" ></
+Div>
+<button
+Onclick="reset game()" >restart</
+Button>
+
+<script>
+Let board=["", "", "", "", "", "", "", "", ""] ;
+Let player="x" ;
+
+Const board div=
+Document. Get Element By Id("board") ;
+
+Function drawboard() {
+Board div. InnerHTML="" ;
+board. For Each ((cell, i) =>{
+ Const div=
+Doncument. Create Element ("div") ;
+Div, classlist. Add("cell") ;
+Div. Inner Text=cell;
+Div. Onclick=() =>
+Make move(i) ;
+Board div. Append child(div) ;
+}) ;
+} 
+
+function make move(i) {
+If(board[i] ===. "") {
+board[i] =player;
+If (check win()) {
+Alert(player+"wins!") ;
+Reset game () ;
+Return;
+} 
+Player=player==="x"? "0":
+"x";
+Draw board() ;
+} 
+} 
+
+Function checkwin() {
+Const wins=[
+[0,1,2,3],[3,4,5],[6,7,8],
+[0,3,6],[1,4,7],[2,5,8],
+[0,4,8],[2,4,6]
+];
+Return wins, some(([a, b, c]) =>
+Board[a] & & board[a] ===
+Board [B] & & board[a] ===board[c]) ;
+} 
+
+Function reset game() {
+Board=["", "", "", "", "", "" 
+"", "", ""] ;
+Draw board() ;
+} 
+Draw board() ;
+</script>
+
+</body>
+</html>
+
+
+
